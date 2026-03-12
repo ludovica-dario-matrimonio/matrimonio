@@ -147,13 +147,17 @@
         ul.regali-simbolici {
             list-style: none;
             padding: 0;
-            text-align: left;
+            text-align: center; /* Allineato al centro per un look più pulito senza icone */
         }
 
         ul.regali-simbolici li {
             margin-bottom: 15px;
             border-bottom: 1px dotted var(--verde-salvia);
             padding-bottom: 10px;
+        }
+
+        ul.regali-simbolici li:last-child {
+            border-bottom: none;
         }
     </style>
 </head>
@@ -191,8 +195,8 @@
         <img src="2.png" alt="Mappa del matrimonio" class="mappa-img">
         
         <div style="margin-top: 20px;">
-            <a href="https://maps.google.com/?q=Borgo+di+Elcito" target="_blank" class="btn-maps">📍 Naviga verso Elcito</a>
-            <a href="https://maps.google.com/?q=La+Serra+Staffolo" target="_blank" class="btn-maps" style="background:none; color:var(--verde-salvia); border:1px solid var(--verde-salvia);">📍 Naviga verso La Serra</a>
+            <a href="https://maps.app.goo.gl/..." target="_blank" class="btn-maps">📍 Naviga verso Elcito</a>
+            <a href="https://maps.app.goo.gl/..." target="_blank" class="btn-maps" style="background:none; color:var(--verde-salvia); border:1px solid var(--verde-salvia);">📍 Naviga verso La Serra</a>
         </div>
     </section>
 
@@ -212,7 +216,7 @@
             <span class="corsivo" style="font-size: 2.2rem;">Domenica 12 Luglio</span>
             <p>Pranzo conviviale in mezzo al <strong>Monte San Vicino</strong> presso il <strong>Centro Ippico dal Gaucho</strong>.<br>
             Opzionale: passeggiata a cavallo per i più temerari.</p>
-            <a href="https://www.google.com/maps/place/Il+Gaucho+Centro+Ippico/@43.3315759,13.0759083,17z/data=!4m14!1m7!3m6!1s0x132dc72ce8100053:0x3c32852070467341!2sIl+Gaucho+Centro+Ippico!8m2!3d43.331572!4d13.0784832!16s%2Fg%2F11g1z3k59w!3m5!1s0x132dc72ce8100053:0x3c32852070467341!8m2!3d43.331572!4d13.0784832!16s%2Fg%2F11g1z3k59w?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-maps">📍 Naviga verso il Gaucho</a>
+            <a href="https://maps.app.goo.gl/..." target="_blank" class="btn-maps">📍 Naviga verso il Gaucho</a>
         </div>
     </section>
 
@@ -264,16 +268,15 @@
 
         <div class="info-box" style="margin-bottom: 40px; background: rgba(255,255,255,0.5);">
             <ul class="regali-simbolici">
-                <li>🌿 <strong>Un albero di arancio</strong> – Per profumare il nostro nuovo giardino.</li>
-                <li>🔥 <strong>Un mattone del camino</strong> – Per scaldare i nostri inverni in compagnia.</li>
-                <li>✨ <strong>Una luce in giardino</strong> – Per illuminare le nostre cene estive.</li>
-                <li>🧱 <strong>Un metro quadro di cotto</strong> – Per poggiare solide basi alla nostra vita insieme.</li>
-                <li>💜 <strong>Un cespuglio di lavanda</strong> – Per dare il benvenuto a chi ci verrà a trovare.</li>
+                <li><strong>Un albero di arancio</strong> – Per profumare il nostro nuovo giardino</li>
+                <li><strong>Un mattone del camino</strong> – Per scaldare i nostri inverni in compagnia</li>
+                <li><strong>Una luce in giardino</strong> – Per illuminare le nostre cene estive</li>
+                <li><strong>Un metro quadro di cotto</strong> – Per poggiare solide basi alla nostra vita insieme</li>
+                <li><strong>Un cespuglio di lavanda</strong> – Per dare il benvenuto a chi ci verrà a trovare</li>
             </ul>
         </div>
         
-        <p>Qualunque sia la vostra scelta, il vostro pensiero sarà parte della nostra casa:</p>
-        <p style="font-size: 1.1rem; letter-spacing: 1px;"><strong>IBAN:</strong> IT 00 X 00000 00000 000000000000</p>
+        <p>Ogni vostro pensiero sarà parte della nostra futura casa.</p>
     </section>
 
     <section id="rsvp">
