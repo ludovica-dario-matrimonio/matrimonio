@@ -114,6 +114,21 @@
         }
         
         .mappa-img { max-width: 100%; height: auto; margin: 20px 0; border: 1px solid #e0dbd0; }
+
+        .btn-maps {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--verde-salvia);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 10px 5px;
+            transition: opacity 0.3s;
+        }
+        .btn-maps:hover { opacity: 0.8; }
     </style>
 </head>
 <body>
@@ -151,8 +166,9 @@
         <div class="divider"></div>
         <div>
             <span class="corsivo" style="font-size: 2.2rem;">Domenica 12 Luglio</span>
-            <p>Pranzo conviviale in mezzo al <strong>Monte San Vicino</strong>.<br>
+            <p>Pranzo conviviale in mezzo al <strong>Monte San Vicino</strong> presso il <strong>Centro Ippico dal Gaucho</strong>.<br>
             Opzionale: passeggiata a cavallo per i più temerari.</p>
+            <a href="https://www.google.com/maps/place/Il+Gaucho+Centro+Ippico/@43.3315759,13.0759083,17z/data=!4m14!1m7!3m6!1s0x132dc72ce8100053:0x3c32852070467341!2sIl+Gaucho+Centro+Ippico!8m2!3d43.331572!4d13.0784832!16s%2Fg%2F11g1z3k59w!3m5!1s0x132dc72ce8100053:0x3c32852070467341!8m2!3d43.331572!4d13.0784832!16s%2Fg%2F11g1z3k59w?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-maps">📍 Naviga verso il Gaucho</a>
         </div>
     </section>
 
@@ -162,11 +178,15 @@
         <p><strong>18:30</strong> – Aperitivo e Ricevimento presso "La Serra" (Staffolo)</p>
         <div class="divider"></div>
         <img src="2.jpg" alt="Mappa del matrimonio" class="mappa-img">
+        <div style="margin-top: 20px;">
+            <a href="https://maps.google.com/?q=Borgo+di+Elcito" target="_blank" class="btn-maps">📍 Naviga verso Elcito</a>
+            <a href="https://maps.google.com/?q=La+Serra+Staffolo" target="_blank" class="btn-maps" style="background:none; color:var(--verde-salvia); border:1px solid var(--verde-salvia);">📍 Naviga verso La Serra</a>
+        </div>
     </section>
 
     <section id="dormire">
         <h2>Dove Dormire</h2>
-        <p>Alcuni suggerimenti per il vostro soggiorno (distanze calcolate dal Ricevimento):</p>
+        <p>Suggerimenti per il soggiorno (distanze dal Ricevimento):</p>
         <div class="info-box">
             <div class="accommodation-item">
                 <a href="https://www.bedandbreakfast.eu/it/a/FGWIma7y0BJl/bb-la-fonte" target="_blank" class="hotel-name">B&B La Fonte</a>
@@ -177,50 +197,4 @@
                 <div class="details">Hotel & Spa • ★ 4.5 — <span class="distance">5 min</span></div>
             </div>
             <div class="accommodation-item">
-                <a href="https://www.fattoriafontegeloni.it/it/" target="_blank" class="hotel-name">Fattoria Fontegeloni</a>
-                <div class="details">Agriturismo • ★ 4.8 — <span class="distance">10-12 min</span></div>
-            </div>
-            <div class="accommodation-item">
-                <a href="https://www.lavecchiafonte.it/" target="_blank" class="hotel-name">La Vecchia Fonte</a>
-                <div class="details">Agriturismo • ★ 4.9 — <span class="distance">12-15 min</span></div>
-            </div>
-            <div class="accommodation-item">
-                <a href="https://www.lepiaggeagriturismo.it/" target="_blank" class="hotel-name">Agriturismo Le Piagge</a>
-                <div class="details">Agriturismo • ★ 4.6 — <span class="distance">10-12 min</span></div>
-            </div>
-            <div class="accommodation-item">
-                <a href="https://www.quivoglio.com/" target="_blank" class="hotel-name">Agriturismo Qui Voglio</a>
-                <div class="details">Agriturismo • ★ 4.9 — <span class="distance">8 min</span></div>
-            </div>
-            <div class="accommodation-item">
-                <a href="https://www.lesinante.it/" target="_blank" class="hotel-name">L'esinante</a>
-                <div class="details">Agriturismo — <span class="distance">16 min</span></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="rsvp">
-        <h2>RSVP</h2>
-        <p>Vi preghiamo di confermare entro il <strong>30 Maggio</strong>.</p>
-        <div style="margin-top: 30px;">
-            <p>Scriveteci o chiamateci per confermare e segnalare eventuali intolleranze:</p>
-            <p style="margin: 20px 0;">
-                <strong>Dario:</strong> <a href="tel:+393420492495" class="contact-link">342 0492495</a>
-            </p>
-            <p style="margin: 20px 0;">
-                <strong>Ludovica:</strong> <a href="tel:+393490651539" class="contact-link">349 0651539</a>
-            </p>
-        </div>
-        <div class="divider" style="margin-top: 60px;"></div>
-        <h2>Lista di Nozze</h2>
-        <p>La vostra presenza è il dono più grande. Se desiderate farci un pensiero:</p>
-        <p><strong>IBAN:</strong> IT 00 X 00000 00000 000000000000</p>
-    </section>
-
-    <footer style="text-align: center; padding: 40px 0; color: var(--verde-salvia); font-size: 0.9rem;">
-        LUDOVICA & DARIO — 11.07.2026
-    </footer>
-</div>
-
-</body>
-</html>
+                <a href="https://www.fatt
