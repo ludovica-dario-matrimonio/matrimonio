@@ -24,18 +24,17 @@
             justify-content: center;
         }
 
-        /* FOGLIE FISSE (Fuori dal container per stabilità totale) */
+        /* FOGLIE FISSE IN ALTO - Sopra a tutto ma "trasparenti" ai click */
         .fixed-branch {
             position: fixed;
-            top: 20px; /* Allineate all'inizio del sito */
+            top: 20px; 
             width: 90px;
             height: auto;
-            z-index: 9999; /* Sopra a ogni cosa immaginabile */
-            pointer-events: none;
+            z-index: 9999;
+            pointer-events: none; /* Rende le foglie cliccabili attraverso */
             mix-blend-mode: multiply;
         }
 
-        /* Calcolo per tenerle sui bordi del container da 850px */
         .t-left { left: calc(50% - 425px); }
         .t-right { right: calc(50% - 425px); transform: scaleX(-1); }
 
@@ -50,7 +49,7 @@
             padding: 5px;
         }
 
-        /* FOGLIE IN BASSO (Absolute nel container) */
+        /* FOGLIE IN BASSO - Seguono il fondo della pagina */
         .bottom-branch {
             position: absolute;
             bottom: 0;
@@ -87,6 +86,7 @@
         section {
             padding: 60px 30px;
             text-align: center;
+            scroll-margin-top: 80px;
         }
 
         h2 {
@@ -122,7 +122,6 @@
         }
 
         .mappa-img { max-width: 60%; height: auto; margin: 40px auto; display: block; }
-
         .casale-img { max-width: 65%; height: auto; margin: 20px auto; display: block; mix-blend-mode: multiply; }
 
         .info-box {
@@ -140,6 +139,8 @@
             border-bottom: 1px dotted #e0dbd0;
             padding-bottom: 15px;
         }
+
+        .accommodation-item:last-child { border-bottom: none; }
 
         .hotel-name { font-size: 1.2rem; font-weight: 600; color: var(--verde-salvia); text-decoration: none; }
         
@@ -172,8 +173,8 @@
             .fixed-branch { width: 70px; top: 20px; }
             .t-left { left: 20px; }
             .t-right { right: 20px; }
-            nav { padding: 15px 45px; }
-            nav a { margin: 0 5px; font-size: 0.7rem; }
+            nav { padding: 15px 30px; }
+            nav a { margin: 0 4px; font-size: 0.65rem; }
             footer { padding: 120px 60px 40px 60px; font-size: 0.75rem; }
         }
     </style>
@@ -216,8 +217,8 @@
             <div class="divider"></div>
             <img src="2.png" alt="Mappa" class="mappa-img">
             <div>
-                <a href="https://maps.app.goo.gl/elcito" target="_blank" class="btn-maps">📍 Naviga verso Elcito</a>
-                <a href="https://maps.app.goo.gl/laserra" target="_blank" class="btn-maps" style="background:none; color:var(--verde-salvia); border:1px solid var(--verde-salvia);">📍 Naviga verso La Serra</a>
+                <a href="https://maps.app.goo.gl/YV5F8yL" target="_blank" class="btn-maps">📍 Naviga verso Elcito</a>
+                <a href="https://maps.app.goo.gl/Xv6H7" target="_blank" class="btn-maps" style="background:none; color:var(--verde-salvia); border:1px solid var(--verde-salvia);">📍 Naviga verso La Serra</a>
             </div>
         </section>
 
@@ -241,12 +242,12 @@
         <section id="dormire">
             <h2>Dove Dormire</h2>
             <div class="info-box">
-                <div class="accommodation-item"><a href="https://www.relaisdelborgo.it/" class="hotel-name">Relais del Borgo</a><div class="details">Hotel & Spa • Staffolo — 5 min</div></div>
-                <div class="accommodation-item"><a href="https://www.borgofontegeloni.it/" class="hotel-name">Borgo Fontegeloni</a><div class="details">Resort & Spa • 10-12 min</div></div>
-                <div class="accommodation-item"><a href="https://www.quivoglio.it/" class="hotel-name">Agriturismo Qui Voglio</a><div class="details">Agriturismo • 8 min</div></div>
-                <div class="accommodation-item"><a href="https://www.lavecchiafonte.it/" class="hotel-name">La Vecchia Fonte</a><div class="details">Agriturismo • 12-15 min</div></div>
-                <div class="accommodation-item"><a href="https://www.villadeisignorelli.it/" class="hotel-name">Villa dei Signorelli</a><div class="details">Country House • 10 min</div></div>
-                <div class="accommodation-item"><a href="https://www.bb-viamazzini.it/" class="hotel-name">B&B Via Mazzini</a><div class="details">B&B • Staffolo Centro</div></div>
+                <div class="accommodation-item"><a href="https://www.relaisdelborgo.it/" class="hotel-name" target="_blank">Relais del Borgo</a><div class="details">Hotel & Spa • Staffolo — 5 min</div></div>
+                <div class="accommodation-item"><a href="https://www.borgofontegeloni.it/" class="hotel-name" target="_blank">Borgo Fontegeloni</a><div class="details">Resort & Spa • 10-12 min</div></div>
+                <div class="accommodation-item"><a href="https://www.quivoglio.it/" class="hotel-name" target="_blank">Agriturismo Qui Voglio</a><div class="details">Agriturismo • 8 min</div></div>
+                <div class="accommodation-item"><a href="https://www.lavecchiafonte.it/" class="hotel-name" target="_blank">La Vecchia Fonte</a><div class="details">Agriturismo • 12-15 min</div></div>
+                <div class="accommodation-item"><a href="https://www.villadeisignorelli.it/" class="hotel-name" target="_blank">Villa dei Signorelli</a><div class="details">Country House • 10 min</div></div>
+                <div class="accommodation-item"><a href="https://www.bb-viamazzini.it/" class="hotel-name" target="_blank">B&B Via Mazzini</a><div class="details">B&B • Staffolo Centro</div></div>
             </div>
         </section>
 
