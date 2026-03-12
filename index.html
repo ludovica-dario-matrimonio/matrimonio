@@ -113,7 +113,17 @@
             font-size: 1.4rem;
         }
         
-        .mappa-img { max-width: 100%; height: auto; margin: 20px 0; border: 1px solid #e0dbd0; }
+        /* STILE MAPPA INCORPORATA */
+        .mappa-img {
+            max-width: 60%;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+            border: none !important; /* Elimina la riga scura del bordo */
+            box-shadow: none !important; /* Elimina eventuali ombre */
+            mix-blend-mode: multiply; /* Fonde il bianco dell'immagine con il crema del sito */
+            filter: contrast(1.1); /* Opzionale: rende il verde del disegno un po' più vivido */
+        }
 
         .btn-maps {
             display: inline-block;
