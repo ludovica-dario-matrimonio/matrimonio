@@ -84,6 +84,17 @@
             margin: 30px auto;
         }
 
+        /* FIX MAPPA: Nessun filtro multiply per evitare l'effetto scuro */
+        .mappa-img {
+            max-width: 65%;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+            border: none !important;
+            box-shadow: none !important;
+            outline: none !important;
+        }
+
         .info-box {
             background: white;
             padding: 30px;
@@ -112,20 +123,6 @@
             font-weight: 600;
             font-size: 1.4rem;
         }
-        
-/* STILE MAPPA INCORPORATA */
-        .mappa-img {
-            max-width: 60%;
-            height: auto;
-            margin: 20px auto;
-            display: block;
-            border: none !important;
-            box-shadow: none !important;
-            /* Questo fonde i bianchi dell'immagine con il crema del sito 
-               senza alterare i colori scuri del disegno */
-            mix-blend-mode: multiply; 
-        }
-        }
 
         .btn-maps {
             display: inline-block;
@@ -138,9 +135,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin: 10px 5px;
-            transition: opacity 0.3s;
         }
-        .btn-maps:hover { opacity: 0.8; }
     </style>
 </head>
 <body>
@@ -184,7 +179,7 @@
         </div>
     </section>
 
-<section id="programma">
+    <section id="programma">
         <h2>Il Giorno del Matrimonio</h2>
         <p><strong>16:30</strong> – Cerimonia presso il Borgo di Elcito</p>
         <p><strong>18:30</strong> – Aperitivo e Ricevimento presso "La Serra" (Staffolo)</p>
@@ -236,12 +231,12 @@
         <h2>RSVP</h2>
         <p>Vi preghiamo di confermare entro il <strong>30 Maggio</strong>.</p>
         <div style="margin-top: 30px;">
-            <p>Potete scriverci o chiamarci per confermare e segnalare eventuali intolleranze:</p>
+            <p>Scriveteci o chiamateci per confermare e segnalare eventuali intolleranze:</p>
             <p style="margin: 20px 0;">
-                <strong>Dario:</strong> <a href="tel:+393420492495" class="contact-link" style="color: var(--verde-salvia); text-decoration: none; font-weight: 600; font-size: 1.4rem;">342 0492495</a>
+                <strong>Dario:</strong> <a href="tel:+393420492495" class="contact-link">342 0492495</a>
             </p>
             <p style="margin: 20px 0;">
-                <strong>Ludovica:</strong> <a href="tel:+393490651539" class="contact-link" style="color: var(--verde-salvia); text-decoration: none; font-weight: 600; font-size: 1.4rem;">349 0651539</a>
+                <strong>Ludovica:</strong> <a href="tel:+393490651539" class="contact-link">349 0651539</a>
             </p>
         </div>
         <div class="divider" style="margin-top: 60px;"></div>
@@ -249,3 +244,11 @@
         <p>La vostra presenza è il dono più grande. Se desiderate farci un pensiero:</p>
         <p><strong>IBAN:</strong> IT 00 X 00000 00000 000000000000</p>
     </section>
+
+    <footer style="text-align: center; padding: 40px 0; color: var(--verde-salvia); font-size: 0.9rem;">
+        LUDOVICA & DARIO — 11.07.2026
+    </footer>
+</div>
+
+</body>
+</html>
