@@ -30,8 +30,6 @@
             width: 100%;
             position: relative;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
         }
 
         nav {
@@ -76,17 +74,24 @@
             font-size: 4rem;
             color: var(--verde-salvia);
             display: block;
-            margin: 15px 0;
+            margin: 10px 0;
         }
 
         h2 { text-transform: uppercase; letter-spacing: 2px; color: var(--verde-salvia); margin-top: 0; }
 
+        .divider-verde {
+            width: 80px;
+            height: 1px;
+            background: var(--verde-salvia);
+            margin: 0 auto 25px auto;
+        }
+
         .btn-container {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         .btn-maps {
@@ -180,21 +185,22 @@
         <section id="home">
             <p style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; max-width: 80%; margin: 0 auto 10px auto;">Ginevra e Riccardo annunciano il matrimonio dei loro genitori</p>
             <span class="corsivo">Ludovica & Dario</span>
-            <h2 style="margin-bottom: 10px;">Sabato 11 Luglio 2026</h2>
-            <p style="font-weight: 600; color: var(--verde-salvia); font-size: 1.1rem;">
+            <h2 style="margin-bottom: 15px;">Sabato 11 Luglio 2026</h2>
+            <p style="font-weight: 600; color: var(--testo); font-size: 1.1rem; line-height: 1.4;">
                 Ore 16:30 Cerimonia a Elcito,<br>
                 a seguire ricevimento presso La Serra a Staffolo.
             </p>
         </section>
 
-        <section id="matrimonio" style="background-color: rgba(122, 141, 117, 0.05);">
+        <section id="matrimonio" style="background-color: rgba(122, 141, 117, 0.03);">
+            <div class="divider-verde"></div>
             <h2>Il Giorno del Matrimonio</h2>
-            <p style="font-style: italic; font-size: 1.2rem; max-width: 650px; margin: 0 auto 15px auto;">
+            <p style="font-style: italic; font-size: 1.25rem; max-width: 650px; margin: 0 auto 15px auto;">
                 Ci scambieremo le promesse nella cornice di Elcito con una cerimonia simbolica che celebrerà la nostra unione.
             </p>
-            <p style="margin-bottom: 40px;">A seguire festeggeremo insieme presso la Serra di Staffolo.</p>
+            <p style="margin-bottom: 40px; font-size: 1.1rem;">A seguire festeggeremo insieme presso la Serra di Staffolo.</p>
             
-            <img src="2.png" alt="Mappa" style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+            <img src="2.png" alt="Mappa Percorso" style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
             
             <div class="btn-container">
                 <a href="https://maps.google.com/?q=Elcito+San+Severino+Marche" target="_blank" class="btn-maps">📍 Naviga verso Elcito</a>
