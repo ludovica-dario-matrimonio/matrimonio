@@ -166,24 +166,27 @@
             nav a { margin: 0 4px; font-size: 0.65rem; }
             .nav-leaf { width: 50px; }
             section { padding: 50px 20px; }
-            .corsivo { font-size: 3.5rem; }
-            .btn-maps { width: 100%; }
         }
-        /* ... altre regole di stile precedenti ... */
 
-    /* AGGIUNGI QUESTO IN FONDO AL BLOCCO STYLE */
-    @media (max-width: 480px) {
-        h1 {
-            font-size: 8vw !important; /* Rende il carattere fluido in base allo schermo */
-            white-space: nowrap !important; /* Forza tutto su una riga */
-            overflow: visible !important;
-            display: block !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
-            text-align: center !important;
+        @media (max-width: 480px) {
+            /* Modifica specifica per i nomi degli sposi e titoli h2 su mobile */
+            h1, h2, .corsivo, .nome-sposi { 
+                font-size: 10vw !important; /* Ridimensiona dinamicamente */
+                white-space: nowrap !important; 
+                display: block !important;
+                width: 100% !important;
+                text-align: center !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding: 0 !important;
+            }
+
+            /* Recuperiamo spazio dai lati della cornice principale */
+            .main-container {
+                padding: 0 5px !important;
+            }
         }
-    }
-</style>
+    </style>
 </head>
 <body>
 
