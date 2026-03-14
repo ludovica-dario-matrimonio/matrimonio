@@ -169,7 +169,21 @@
             .corsivo { font-size: 3.5rem; }
             .btn-maps { width: 100%; }
         }
-    </style>
+        /* ... altre regole di stile precedenti ... */
+
+    /* AGGIUNGI QUESTO IN FONDO AL BLOCCO STYLE */
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 8vw !important; /* Rende il carattere fluido in base allo schermo */
+            white-space: nowrap !important; /* Forza tutto su una riga */
+            overflow: visible !important;
+            display: block !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            text-align: center !important;
+        }
+    }
+</style>
 </head>
 <body>
 
