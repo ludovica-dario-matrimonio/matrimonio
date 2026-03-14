@@ -312,8 +312,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        text-decoration: none;
-        color: inherit;
+        cursor: pointer;
         transition: transform 0.3s ease;
     }
 
@@ -337,10 +336,6 @@
     .blocco-sogno:hover img {
         transform: scale(1.08);
     }
-    
-    .blocco-sogno:hover .titolo-regalo {
-        color: #5a6b56;
-    }
 
     .titolo-regalo {
         font-family: 'Cormorant Garamond', serif;
@@ -348,7 +343,6 @@
         color: var(--verde-salvia);
         font-size: 1.1rem;
         margin-bottom: 5px;
-        display: block;
     }
 
     .desc-regalo {
@@ -356,106 +350,173 @@
         font-style: italic;
         color: #777;
         line-height: 1.3;
-        display: block;
         padding: 0 10px;
     }
 
-    @media (min-width: 768px) {
-        .griglia-sogni { grid-template-columns: repeat(3, 1fr); }
+    /* Stile del Pop-up (Modal) */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(5px);
     }
-    @media (min-width: 992px) {
-        .griglia-sogni { grid-template-columns: repeat(4, 1fr); }
+
+    .modal-content {
+        background-color: #fff;
+        margin: 10% auto;
+        padding: 40px;
+        border: 1px solid #dcd7cc;
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        position: relative;
+        border-radius: 2px;
     }
+
+    .close-modal {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #999;
+    }
+
+    .iban-display {
+        font-family: 'Courier New', monospace;
+        font-size: 1.05rem;
+        font-weight: bold;
+        background: #fdfaf5;
+        padding: 15px;
+        display: block;
+        margin: 20px 0;
+        border: 1px dashed var(--verde-salvia);
+        letter-spacing: 1px;
+        word-break: break-all; /* Per mobile */
+    }
+
+    @media (min-width: 768px) { .griglia-sogni { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 992px) { .griglia-sogni { grid-template-columns: repeat(4, 1fr); } }
 </style>
 
 <section id="regali">
     <div class="divider-verde"></div>
-    <h2>Un sogno da costruire</h2>
+    <h2>Il nostro sogno</h2>
     <p style="margin-bottom: 25px; max-width: 90%; margin-left: auto; margin-right: auto; font-style: italic;">
         La vostra presenza è per noi l'unico vero regalo e non desideriamo altro. Se però voleste dedicarci un pensiero speciale, ci piacerebbe sapervi parte del nostro futuro, costruendo con noi un piccolo pezzetto del nostro nuovo casale tra le colline marchigiane.
     </p>
 
     <div class="griglia-sogni">
-        
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=ludovica.barontini@gmail.com&item_name=Un%20albero%20di%20ulivo&currency_code=EUR" target="_blank" class="blocco-sogno">
+        <div class="blocco-sogno" onclick="apriModal('Un albero di arancio o di ulivo')">
             <div class="cornice-immagine"><img src="Ulivo.png" alt="Ulivo"></div>
             <span class="titolo-regalo">Un albero di arancio o di ulivo</span>
             <span class="desc-regalo">Per veder crescere radici forti nel nostro nuovo giardino.</span>
-        </a>
+        </div>
 
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=ludovica.barontini@gmail.com&item_name=Una%20distesa%20di%20ginestre&currency_code=EUR" target="_blank" class="blocco-sogno">
+        <div class="blocco-sogno" onclick="apriModal('Una distesa di ginestre gialle')">
             <div class="cornice-immagine"><img src="Ginestre.png" alt="Ginestre"></div>
             <span class="titolo-regalo">Una distesa di ginestre gialle</span>
             <span class="desc-regalo">Per colorare la collina e profumare l'aria delle nostre estati.</span>
-        </a>
+        </div>
 
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=ludovica.barontini@gmail.com&item_name=Il%20grande%20porticato&currency_code=EUR" target="_blank" class="blocco-sogno">
+        <div class="blocco-sogno" onclick="apriModal('Il grande porticato')">
             <div class="cornice-immagine"><img src="Porticato.png" alt="Porticato"></div>
             <span class="titolo-regalo">Il grande porticato</span>
             <span class="desc-regalo">Uno spazio d'ombra per i pomeriggi di relax e le letture all'aperto.</span>
-        </a>
+        </div>
 
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=ludovica.barontini@gmail.com&item_name=Il%20barbecue%20in%20muratura&currency_code=EUR" target="_blank" class="blocco-sogno">
+        <div class="blocco-sogno" onclick="apriModal('Il barbecue in muratura')">
             <div class="cornice-immagine"><img src="Barbecue.png" alt="Barbecue"></div>
             <span class="titolo-regalo">Il barbecue in muratura</span>
             <span class="desc-regalo">Per accendere il fuoco delle domeniche trascorse insieme agli amici.</span>
-        </a>
+        </div>
 
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=ludovica.barontini@gmail.com&item_name=Un%20tassello%20della%20piscina&currency_code=EUR" target="_blank" class="blocco-sogno">
+        <div class="blocco-sogno" onclick="apriModal('Un tassello della piscina')">
             <div class="cornice-immagine"><img src="Piscina.png" alt="Piscina"></div>
             <span class="titolo-regalo">Un tuffo nel blu</span>
             <span class="desc-regalo">Un tassello della nostra piscina tra l'acqua e il cielo delle Marche.</span>
-        </a>
+        </div>
 
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=ludovica.barontini@gmail.com&item_name=Luci%20in%20giardino&currency_code=EUR" target="_blank" class="blocco-sogno">
+        <div class="blocco-sogno" onclick="apriModal('Una luce in giardino')">
             <div class="cornice-immagine"><img src="Luci.png" alt="Luci"></div>
             <span class="titolo-regalo">Una luce in giardino</span>
             <span class="desc-regalo">Per illuminare le lunghe tavolate delle nostre cene estive.</span>
-        </a>
+        </div>
 
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=ludovica.barontini@gmail.com&item_name=Restauro%20travi%20antiche&currency_code=EUR" target="_blank" class="blocco-sogno">
+        <div class="blocco-sogno" onclick="apriModal('Il restauro delle travi antiche')">
             <div class="cornice-immagine"><img src="Travi.png" alt="Travi"></div>
             <span class="titolo-regalo">Il restauro delle travi antiche</span>
             <span class="desc-regalo">Per preservare il fascino e la storia del legno che ci proteggerà.</span>
-        </a>
+        </div>
 
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=ludovica.barontini@gmail.com&item_name=Mattone%20per%20il%20camino&currency_code=EUR" target="_blank" class="blocco-sogno">
+        <div class="blocco-sogno" onclick="apriModal('Un mattone per il grande camino')">
             <div class="cornice-immagine"><img src="Camino.png" alt="Camino"></div>
             <span class="titolo-regalo">Un mattone per il grande camino</span>
             <span class="desc-regalo">Per riscaldare i nostri futuri inverni in famiglia.</span>
-        </a>
+        </div>
 
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=ludovica.barontini@gmail.com&item_name=Finestra%20sulle%20colline&currency_code=EUR" target="_blank" class="blocco-sogno">
+        <div class="blocco-sogno" onclick="apriModal('Una finestra verso le colline')">
             <div class="cornice-immagine"><img src="Finestra.png" alt="Finestra"></div>
             <span class="titolo-regalo">Una finestra verso le colline</span>
             <span class="desc-regalo">Per incorniciare la bellezza della natura in ogni stanza.</span>
-        </a>
+        </div>
 
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=ludovica.barontini@gmail.com&item_name=Un%20metro%20quadro%20di%20prato&currency_code=EUR" target="_blank" class="blocco-sogno">
+        <div class="blocco-sogno" onclick="apriModal('Un metro quadro di prato')">
             <div class="cornice-immagine"><img src="Erba.png" alt="Prato"></div>
             <span class="titolo-regalo">Un metro quadro di prato</span>
             <span class="desc-regalo">Per le corse dei bambini e i giochi dei nostri cani.</span>
-        </a>
+        </div>
 
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=ludovica.barontini@gmail.com&item_name=Una%20panca%20sotto%20l'albero&currency_code=EUR" target="_blank" class="blocco-sogno">
+        <div class="blocco-sogno" onclick="apriModal('Una panca sotto l\'albero')">
             <div class="cornice-immagine"><img src="Panca.png" alt="Panca"></div>
             <span class="titolo-regalo">Una panca sotto l'albero</span>
             <span class="desc-regalo">Per i momenti di silenzio e per guardare insieme l'orizzonte.</span>
-        </a>
+        </div>
 
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=ludovica.barontini@gmail.com&item_name=Il%20grande%20tavolo&currency_code=EUR" target="_blank" class="blocco-sogno">
+        <div class="blocco-sogno" onclick="apriModal('Il grande tavolo in cucina')">
             <div class="cornice-immagine"><img src="Tavolo.png" alt="Tavolo"></div>
             <span class="titolo-regalo">Il grande tavolo in cucina</span>
             <span class="desc-regalo">Per accogliere tutti voi e condividere i pranzi più belli.</span>
-        </a>
-
+        </div>
     </div>
-    
-    <p style="margin-top: 40px; font-size: 0.8rem; color: #999; text-align: center; font-style: italic;">
-        Cliccando sulle immagini potrai scegliere l'importo del tuo pensiero speciale.<br>
-        È possibile partecipare sia tramite conto PayPal che con carta di credito.
-    </p>
+
+    <div id="regaloModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="chiudiModal()">&times;</span>
+            <h3 id="nomeRegalo" style="color: var(--verde-salvia); font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; margin-bottom: 0;"></h3>
+            <p style="margin-top: 20px; font-size: 0.95rem; line-height: 1.5;">Grazie di cuore per voler far parte del nostro sogno!<br>Puoi partecipare tramite bonifico bancario:</p>
+            <span class="iban-display">IT76T0306909462100000010451</span>
+            <p style="font-size: 0.85rem; color: #777;">Intestato a: <strong>Ludovica Barontini</strong><br><br>Causale suggerita:<br><span id="causaleSuggerita" style="font-style: italic; color: #333;"></span></p>
+        </div>
+    </div>
 </section>
+
+<script>
+    function apriModal(regalo) {
+        document.getElementById('nomeRegalo').innerText = regalo;
+        document.getElementById('causaleSuggerita').innerText = "Regalo di nozze - " + regalo;
+        document.getElementById('regaloModal').style.display = "block";
+        document.body.style.overflow = "hidden"; // Impedisce lo scroll della pagina sotto il modal
+    }
+
+    function chiudiModal() {
+        document.getElementById('regaloModal').style.display = "none";
+        document.body.style.overflow = "auto"; // Riabilita lo scroll
+    }
+
+    window.onclick = function(event) {
+        let modal = document.getElementById('regaloModal');
+        if (event.target == modal) {
+            chiudiModal();
+        }
+    }
+</script>
         <section id="rsvp">
             <div class="divider-verde"></div>
             <h2>RSVP</h2>
